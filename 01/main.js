@@ -14,18 +14,23 @@ const answer2 = part2(numbers);
 console.log(answer1 || 'unknown', answer2 || 'unknown');
 
 function part1(numbers, total = 2020) {
+  // loop through the numbers
   for (let value of numbers) {
     const x = total - value;
 
+    // find the other value
     if (numbers.includes(x)) return x * value;
   }
 }
 
 function part2(numbers, total = 2020) {
+  // loop through values
   for (let value1 of numbers) {
+    // loop through reversed values
     for (let value2 of numbers.reverse()) {
       const x = total - value1 - value2;
 
+      // find the third value
       if (numbers.includes(x)) return x * value1 * value2;
     }
   }
